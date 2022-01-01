@@ -1,7 +1,7 @@
 # Tilt-Brush-QV-Pen
 VRC Prefab
 
-![tilt brush vrc](https://user-images.githubusercontent.com/93958928/147859705-5ccd932b-bfdc-4d83-8ea5-6e1f1a6d3b6d.jpeg)
+![tilt brush vrc](https://user-images.githubusercontent.com/93958928/147859723-7134eacf-e967-472c-b5fe-c4859e386d1c.gif)
 
  ** Check off Allow 'Unsafe Code' in the Player tab of the Project Settings
 
