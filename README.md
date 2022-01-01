@@ -1,5 +1,5 @@
 # Tilt-Brush-QV-Pen
-VRC Prefab
+Quest compatible VRC Prefab
 
 ![tilt brush vrc](https://user-images.githubusercontent.com/93958928/147859838-33bf47ad-c2dd-45b9-86ff-62b5f7acf142.gif)
 
