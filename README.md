@@ -15,9 +15,7 @@ make sure the the Brush.cgic file is set to the direct path
 #include "Assets/Tilt Brushes by Smew/UnitySDK/Assets/TiltBrush/Assets/Shaders/Include/Brush.cginc"
 
 ..Same goes for other include errors
-  
-There are more VRC/Quest compatible shaders in here, I just haven't tested them all. I know the Ink splatter and toon works 
-but the toon doesn't generate the 3D toon objects yet
+ 
  
 
 </i>
