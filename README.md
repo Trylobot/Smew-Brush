@@ -13,7 +13,7 @@ Requirements: Udon#, VRChat SDK3
 <i>
 note: The VelvetInk WaveForm and Bloom brush shaders have different include paths than the other tilt brush shaders.
 
-If errors occor in a new shader you're testing, make sure the the Brush.cgic file is set to the direct path
+<b>If you're testing new tiltbrush shaders from the tilt brush unity sdk /b>, make sure the the Brush.cgic file is set to the direct path
   
 #include "Assets/Tilt Brushes by Smew/UnitySDK/Assets/TiltBrush/Assets/Shaders/Include/Brush.cginc"
 
