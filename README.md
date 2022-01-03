@@ -21,3 +21,5 @@ make sure the the Brush.cgic file is set to the direct path
 </i>
 
 ![VRChat_1920x1080_2022-01-01_02-24-13 659](https://user-images.githubusercontent.com/93958928/147859577-f3d01a11-a4c2-4adf-ab95-df3d3eb74314.png)
+
+![VRChat_1920x1080_2022-01-03_00-45-12 728](https://user-images.githubusercontent.com/93958928/147908339-b5e70dbf-436d-40d9-916c-b4a6ceef96b0.png)
