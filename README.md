@@ -1,4 +1,4 @@
-# Tilt-Brush-VRC-Pen
+# Tilt-Brush-VRC-Shaders
 Quest compatible VRC Prefab
 
 Requirements: Udon#, VRChat SDK3
