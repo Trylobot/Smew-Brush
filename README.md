@@ -1,5 +1,8 @@
 # Tilt-Brush-VRC-Shaders
-Quest compatible VRC Prefab
+
+[Unity prefab: Smew.zip]
+
+Quest compatible VRC Drawing Prefab
 
 Requirements: Udon#, VRChat SDK3
 
