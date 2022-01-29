@@ -1,6 +1,6 @@
 # Tilt-Brush-VRC-Shaders
 
-<b>[Unity prefab: Smew.zip]</b>
+<h2><b>[Unity prefab: Smew.zip]</b></h2>
 
 Quest compatible VRC Drawing Prefab
 
