@@ -1,8 +1,6 @@
 # Tilt-Brush-VRC-Shaders
 
 
-Quest compatible VRC Drawing Prefab https://smew.booth.pm/items/3591518
-
 Requirements: Udon#, VRChat SDK3
 
  ** Check off Allow 'Unsafe Code' in the Player tab of the Project Settings
