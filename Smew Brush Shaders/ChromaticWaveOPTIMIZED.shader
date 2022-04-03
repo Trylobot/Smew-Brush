@@ -33,7 +33,6 @@ Category {
       #pragma fragment frag
       #pragma target 3.0
       #pragma multi_compile_particles
-      #pragma multi_compile __ AUDIO_REACTIVE
       #pragma multi_compile __ TBT_LINEAR_TARGET
       #pragma target 3.0
 
