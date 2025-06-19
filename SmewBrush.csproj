@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="QvPen_Pen.cs" />
+    <Compile Include="QvPen_PenManager.cs" />
+    <Compile Include="stubs/UnityStubs.cs" />
+  </ItemGroup>
+</Project>

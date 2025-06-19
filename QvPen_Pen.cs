@@ -1,5 +1,6 @@
 using UdonSharp;
 using UnityEngine;
+using System.Text;
 using VRC.SDK3.Components;
 using VRC.SDKBase;
 using VRC.Udon.Common.Interfaces;
@@ -862,6 +863,128 @@ namespace QvPen.UdonScript
                 child.localRotation = Quaternion.identity;
                 child.localScale = Vector3.one;
             }
+        }
+
+        #endregion
+
+        #region SaveLoad
+
+        private const string SaveKey = "QvPen_WorldState";
+
+        public void SaveState()
+        {
+            var sb = new System.Text.StringBuilder();
+            foreach (Transform ink in inkPoolSynced)
+            {
+                var lr = ink.GetComponent<LineRenderer>();
+                if (lr)
+                {
+                    var data = _PackData(lr, MODE_DRAW);
+                    sb.AppendLine(Vector3ArrayToString(data));
+                }
+            }
+
+            foreach (Transform ink in inkPoolNotSynced)
+            {
+                var lr = ink.GetComponent<LineRenderer>();
+                if (lr)
+                {
+                    var data = _PackData(lr, MODE_DRAW);
+                    sb.AppendLine(Vector3ArrayToString(data));
+                }
+            }
+
+            PlayerPrefs.SetString(SaveKey, sb.ToString());
+            PlayerPrefs.Save();
+        }
+
+        public void RestoreState()
+        {
+            var saved = PlayerPrefs.GetString(SaveKey, string.Empty);
+            if (string.IsNullOrEmpty(saved))
+                return;
+
+            _Clear();
+
+            var lines = saved.Split(new char[] { '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
+            foreach (var line in lines)
+            {
+                var data = StringToVector3Array(line);
+                _UnpackData(data);
+            }
+        }
+
+        public void CopyStateToClipboard()
+        {
+            var sb = new System.Text.StringBuilder();
+            foreach (Transform ink in inkPoolSynced)
+            {
+                var lr = ink.GetComponent<LineRenderer>();
+                if (lr)
+                {
+                    var data = _PackData(lr, MODE_DRAW);
+                    sb.AppendLine(Vector3ArrayToString(data));
+                }
+            }
+
+            foreach (Transform ink in inkPoolNotSynced)
+            {
+                var lr = ink.GetComponent<LineRenderer>();
+                if (lr)
+                {
+                    var data = _PackData(lr, MODE_DRAW);
+                    sb.AppendLine(Vector3ArrayToString(data));
+                }
+            }
+
+            GUIUtility.systemCopyBuffer = sb.ToString();
+        }
+
+        public void PasteStateFromClipboard()
+        {
+            var saved = GUIUtility.systemCopyBuffer;
+            if (string.IsNullOrEmpty(saved))
+                return;
+
+            _Clear();
+
+            var lines = saved.Split(new char[] { '\n' }, System.StringSplitOptions.RemoveEmptyEntries);
+            foreach (var line in lines)
+            {
+                var data = StringToVector3Array(line);
+                _UnpackData(data);
+            }
+        }
+
+        private string Vector3ArrayToString(Vector3[] array)
+        {
+            var sb = new System.Text.StringBuilder();
+            for (int i = 0; i < array.Length; i++)
+            {
+                var v = array[i];
+                sb.Append(v.x).Append(',').Append(v.y).Append(',').Append(v.z);
+                if (i < array.Length - 1)
+                    sb.Append(';');
+            }
+            return sb.ToString();
+        }
+
+        private Vector3[] StringToVector3Array(string data)
+        {
+            var parts = data.Split(new char[] { ';' }, System.StringSplitOptions.RemoveEmptyEntries);
+            var result = new Vector3[parts.Length];
+            for (int i = 0; i < parts.Length; i++)
+            {
+                var values = parts[i].Split(',');
+                if (values.Length == 3 &&
+                    float.TryParse(values[0], out var x) &&
+                    float.TryParse(values[1], out var y) &&
+                    float.TryParse(values[2], out var z))
+                {
+                    result[i] = new Vector3(x, y, z);
+                }
+            }
+            return result;
         }
 
         #endregion

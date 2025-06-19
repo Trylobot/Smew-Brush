@@ -200,6 +200,14 @@ namespace QvPen.UdonScript
         {
             SoundFX = SyncedSound;
         }
+
+        public void SaveWorldState() => pen.SaveState();
+
+        public void RestoreWorldState() => pen.RestoreState();
+
+        public void CopyWorldStateToClipboard() => pen.CopyStateToClipboard();
+
+        public void PasteWorldStateFromClipboard() => pen.PasteStateFromClipboard();
         #endregion
 
         #region Network
