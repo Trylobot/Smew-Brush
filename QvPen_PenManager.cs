@@ -208,6 +208,12 @@ namespace QvPen.UdonScript
         public void CopyWorldStateToClipboard() => pen.CopyStateToClipboard();
 
         public void PasteWorldStateFromClipboard() => pen.PasteStateFromClipboard();
+
+        public Transform CreateInkGroup(string name, Transform parent = null)
+            => pen.CreateInkGroup(name, parent);
+
+        public void SetInkParent(Transform ink, Transform parent)
+            => pen.SetInkParent(ink, parent);
         #endregion
 
         #region Network
