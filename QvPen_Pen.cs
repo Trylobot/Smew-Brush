@@ -867,6 +867,20 @@ namespace QvPen.UdonScript
 
         #endregion
 
+        #region Grouping
+
+        public Transform CreateInkGroup(string name, Transform parent = null)
+        {
+            var group = new GameObject(name).transform;
+            SetParentAndResetLocalTransform(group, parent ? parent : inkPoolRoot);
+            return group;
+        }
+
+        public void SetInkParent(Transform ink, Transform parent)
+            => SetParentAndResetLocalTransform(ink, parent ? parent : inkPoolRoot);
+
+        #endregion
+
         #region SaveLoad
 
         private const string SaveKey = "QvPen_WorldState";

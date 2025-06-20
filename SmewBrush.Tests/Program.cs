@@ -11,6 +11,9 @@ class Program {
         pen.CopyStateToClipboard();
         pen.RestoreState();
         pen.PasteStateFromClipboard();
+        var group = pen.CreateInkGroup("group");
+        var ink = new UnityEngine.GameObject().transform;
+        pen.SetInkParent(ink, group);
         Console.WriteLine("Tests ran");
         return 0;
     }
